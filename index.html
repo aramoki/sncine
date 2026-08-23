@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SNCINE is a game engine focused on high visual quality, optimization, and runtime performance across multiple platforms.">
+  <meta name="theme-color" content="#090a0c">
+  <title>SNCINE | Game Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top"><i></i>SNCINE</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav"><a href="#rendering">Rendering</a><a href="#systems">Systems</a><a href="#editor">Editor</a><a href="#videos">Videos</a><a href="#gallery">Gallery</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-image" src="assets/8k-render.png" alt="Detailed Sponza scene rendered in SNCINE">
+      <div class="hero-overlay"></div>
+      <div class="hero-content page-width">
+        <p class="eyebrow">GAME ENGINE</p>
+        <h1>A GAME ENGINE<br>BUILT FROM<br>THE GROUND UP.</h1>
+        <p>SNCINE aims to power high quality content across multiple platforms while keeping visual fidelity, optimization, and runtime performance at the highest possible level.</p>
+        <div class="actions"><a class="button primary" href="#videos">Watch the engine</a><a class="button" href="#rendering">Explore the tech ↘</a></div>
+      </div>
+    </section>
+
+    <section class="intro page-width reveal">
+      <p class="kicker">01 / OVERVIEW</p>
+      <div class="heading-grid"><h2>ONE ENGINE.<br>EVERY LAYER.</h2><div><p class="lead">SNCINE remains in active development.</p><p class="muted">SNC Library, the SNCINE core engine, and the editor work together as a layered system. Every layer is designed around portability, predictable data flow, and efficient execution.</p><div class="progress"><div class="progress-label"><span>Development progress</span><strong>50%</strong></div><div class="progress-track" role="progressbar" aria-label="Development progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span></span></div></div></div></div>
+      <div class="architecture-grid">
+        <article><span>CORE, TOOLS &amp; SCRIPTING</span><h3>C at the core.<br>C++ for the tools.<br>Lua for scripting.</h3><p>The core engine is written in C, the integrated editor and tools are written in C++, and Lua provides the scripting layer. All three work directly with SNC Library and the runtime.</p></article>
+        <article><span>GRAPHICS API</span><h3>Vulkan across<br>different platforms.</h3><p>Separate graphics pipelines and compatibility paths allow SNCINE to adapt its Vulkan backend to different devices.</p></article>
+        <article><span>MEMORY</span><h3>Sparse by<br>design.</h3><p>Vulkan memory operations are managed through perforated sparse data structures called <code>snc_sparse_list</code>.</p></article>
+        <article><span>PRIORITY</span><h3>Performance<br>comes first.</h3><p>Optimization, code execution speed, and stable behavior across a wide range of platforms remain primary development goals.</p></article>
+      </div>
+    </section>
+
+    <section id="rendering" class="section page-width reveal">
+      <header class="section-head"><div><p class="kicker">02 / RENDERING</p><h2>LIGHT, DEPTH,<br>AND MATERIAL.</h2></div><p>A modern forward+ pipeline built for dense scenes, dynamic lights, rich materials, and predictable GPU work.</p></header>
+      <figure class="feature zoom"><img src="assets/8k-render-2.png" alt="SNCINE scene demonstrating local lighting and shadows" loading="lazy"><figcaption><b>Dynamic local lighting</b><span>Forward+ · PBR · HDR</span></figcaption></figure>
+      <div class="capabilities">
+        <article><span>PIPELINE</span><h3>GPU based visibility</h3><p>Indirect rendering, compute culling, sparse GPU lists, Reverse Z depth, and HZB occlusion culling.</p></article>
+        <article><span>LIGHTING</span><h3>Scalable illumination</h3><p>Forward+ clusters, cascaded and local shadows, HDR IBL, and baked light probes.</p></article>
+        <article><span>MATERIALS</span><h3>Layered surfaces</h3><p>PBR, clearcoat, decals, multiple textures, BC formats, mipmaps, and alpha testing.</p></article>
+        <article><span>EFFECTS</span><h3>Finished frames</h3><p>Weighted blended OIT, SSAO, bloom, particles, billboards, and tone mapping.</p></article>
+      </div>
+      <div class="media-pair"><figure class="card zoom"><img src="assets/clearcoat.png" alt="Clearcoat material test in SNCINE" loading="lazy"><figcaption><b>Clearcoat materials</b><span>Independent coat normals</span></figcaption></figure><figure class="card zoom"><img src="assets/decals.png" alt="Decal material editing in SNCINE" loading="lazy"><figcaption><b>Runtime decals</b><span>Material-driven detail</span></figcaption></figure></div>
+    </section>
+
+    <section id="systems" class="section dark reveal"><div class="page-width">
+      <header class="section-head"><div><p class="kicker">03 / ENGINE SYSTEMS</p><h2>STREAMING EVERYTHING.<br>THE SMART WAY.</h2></div><p>Resources, scene partitions, textures, and GPU transfers move through systems designed to load only what the engine needs.</p></header>
+      <div class="system-list">
+        <article><span>01</span><h3>Asset streaming</h3><p>Reference counted cache, lazy access, partitioned scenes, and asynchronous CPU and GPU transfers.</p></article>
+        <article><span>02</span><h3>Animation</h3><p>Skeletal rendering, individual playback states, animation selection, and editor controls.</p></article>
+        <article><span>03</span><h3>Scene &amp; physics</h3><p>Grid partitioning, physics, input, object picking, and Lua scripting.</p></article>
+        <article><span>04</span><h3>SNCPAK</h3><p>Custom packages for glTF/GLB import, texture compression, export, and runtime delivery.</p></article>
+      </div>
+      <figure class="cinematic zoom"><img src="assets/animation-per-object.png" alt="Two independently animated characters in SNCINE" loading="lazy"><figcaption>INDIVIDUAL ANIMATION STATES</figcaption></figure>
+    </div></section>
+
+    <section id="editor" class="section page-width reveal">
+      <header class="section-head"><div><p class="kicker">04 / EDITOR</p><h2>TOOLS BUILT<br>BESIDE THE ENGINE.</h2></div><p>The ImGui editor keeps scene authoring, package operations, debugging, and profiling close to the runtime.</p></header>
+      <div class="editor-grid"><figure class="editor-main zoom"><img src="assets/sncine.png" alt="SNCINE editor diagnostics" loading="lazy"><figcaption><b>Scene diagnostics</b><span>Lights, bounds, and object overlays</span></figcaption></figure><div><figure class="zoom"><img src="assets/exporting.png" alt="SNCPAK project export" loading="lazy"><figcaption><b>Project export</b><span>Packaging and compression</span></figcaption></figure><figure class="zoom"><img src="assets/performance.png" alt="SNCINE CPU and GPU profiler" loading="lazy"><figcaption><b>Performance view</b><span>CPU and GPU timing</span></figcaption></figure></div></div>
+      <div class="tags"><span>glTF / GLB</span><span>Asset browser</span><span>Material editor</span><span>Object picking</span><span>Animation player</span><span>CPU / GPU profiler</span></div>
+    </section>
+
+    <section id="videos" class="section dark video-section reveal"><div class="page-width">
+      <header class="section-head"><div><p class="kicker">05 / TECHNICAL DEMOS</p><h2>SEE IT RUNNING.</h2></div><p>Focused walkthroughs captured directly from SNCINE. Press play to watch without leaving the page.</p></header>
+      <div class="video-grid">
+        <article class="video-card featured"><div class="video"><iframe src="https://www.youtube.com/embed/XmgOTEZHYH4?si=iZjbTA4q-_NOFkJ1" title="SNCINE Physics" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>01 · 01:43</span><h3>Physics</h3><a href="https://www.youtube.com/watch?v=XmgOTEZHYH4" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/sqPwTHty6HU?si=y1qUeA0ZBf3wsx15" title="SNCINE HZB Occlusion Culling" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>02 · 01:44</span><h3>HZB Occlusion Culling</h3><a href="https://www.youtube.com/watch?v=sqPwTHty6HU" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/6iwslvGcgWg?si=kbMmMGcKWzVHBjMW" title="SNCINE Loading Models Resources and Animation" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>03 · 15:16</span><h3>Models, Resources &amp; Animation</h3><a href="https://www.youtube.com/watch?v=6iwslvGcgWg&amp;t=494s" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/XEwaYR7QP2k?si=xf9kzStThv6BOCGN" title="SNCINE Asset Streaming" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>04 · 07:01</span><h3>Asset Streaming</h3><a href="https://www.youtube.com/watch?v=XEwaYR7QP2k" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/HOcaE_2LdWE?si=okX00efWUQGXitqI" title="SNCINE BCn Block Compression" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>05 · 03:14</span><h3>BCn Block Compression</h3><a href="https://www.youtube.com/watch?v=HOcaE_2LdWE" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/fmg0oYUmyiw?si=qaOaG_1AepbG1rcf" title="SNCINE Cascaded Shadows and Forward Plus" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>06 · 05:31</span><h3>Cascaded Shadows &amp; Forward+</h3><a href="https://www.youtube.com/watch?v=fmg0oYUmyiw" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/EEFlb0PxcRA?si=si1aVBzdf9Bf6gns" title="SNCINE Light Probes" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>07 · 04:38</span><h3>Light Probes</h3><a href="https://www.youtube.com/watch?v=EEFlb0PxcRA" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/H4djC-LDAXM?si=bQKYwMvbOc3hvi5-" title="SNCINE Weighted Blended OIT" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>08 · 04:25</span><h3>Weighted Blended OIT</h3><a href="https://www.youtube.com/watch?v=H4djC-LDAXM" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/eAlPw3mSIFw?si=3N4E_DM-CH1QqjyC" title="SNCINE Asset Streaming Walkthrough" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>09 · 07:01</span><h3>Asset Streaming Walkthrough</h3><a href="https://www.youtube.com/watch?v=eAlPw3mSIFw&amp;t=247s" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+        <article class="video-card"><div class="video"><iframe src="https://www.youtube.com/embed/1l61FUhl3-Q?si=g0raTpy_K-HSBmom" title="SNCINE Technical Demo" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-info"><span>10 · NEW</span><h3>SNCINE Technical Demo</h3><a href="https://www.youtube.com/watch?v=1l61FUhl3-Q" target="_blank" rel="noopener">YouTube ↗</a></div></article>
+      </div>
+    </div></section>
+
+    <section id="gallery" class="section page-width reveal">
+      <header class="section-head"><div><p class="kicker">06 / GALLERY</p><h2>FRAMES FROM<br>THE ENGINE.</h2></div><p>Lighting studies, editor captures, material tests, and high resolution scenes. Select an image for full size.</p></header>
+      <div class="gallery">
+        <figure class="wide zoom"><img src="assets/sncr.png" alt="Sunlit architectural scene in SNCINE" loading="lazy"><figcaption>Sun &amp; shadow</figcaption></figure>
+        <figure class="zoom"><img src="assets/light-shadow-2.png" alt="Light probe bake controls" loading="lazy"><figcaption>Probe lighting</figcaption></figure>
+        <figure class="zoom"><img src="assets/editor-detail.png" alt="Detailed editor viewport" loading="lazy"><figcaption>Editor viewport</figcaption></figure>
+        <figure class="zoom"><img src="assets/light-shadow.png" alt="Cascaded shadow scene" loading="lazy"><figcaption>Cascaded shadows</figcaption></figure>
+        <figure class="zoom"><img src="assets/a-scene.png" alt="Architectural scene rendered in SNCINE" loading="lazy"><figcaption>Architectural scene</figcaption></figure>
+        <figure class="wide zoom"><img src="assets/chess.png" alt="Chess scene rendered with SNCINE" loading="lazy"><figcaption>Chess material study</figcaption></figure>
+        <figure class="zoom"><img src="assets/emissive-decals.png" alt="Emissive helmet material comparison" loading="lazy"><figcaption>Emissive materials</figcaption></figure>
+        <figure class="zoom"><img src="assets/render-study-01.png" alt="SNCINE rendering study one" loading="lazy"><figcaption>Rendering study 01</figcaption></figure>
+        <figure class="zoom"><img src="assets/render-study-02.png" alt="SNCINE rendering study two" loading="lazy"><figcaption>Rendering study 02</figcaption></figure>
+        <figure class="zoom"><img src="assets/render-study-03.png" alt="SNCINE rendering study three" loading="lazy"><figcaption>Rendering study 03</figcaption></figure>
+        <figure class="zoom"><img src="assets/render-study-04.png" alt="SNCINE rendering study four" loading="lazy"><figcaption>Rendering study 04</figcaption></figure>
+        <figure class="zoom"><img src="assets/render-study-05.png" alt="SNCINE rendering study five" loading="lazy"><figcaption>Rendering study 05</figcaption></figure>
+        <figure class="wide zoom"><img src="assets/sponza.png" alt="Sponza scene rendered in SNCINE" loading="lazy"><figcaption>Sponza</figcaption></figure>
+        <figure class="zoom"><img src="assets/ibl-process.png" alt="Image-based lighting scene in SNCINE" loading="lazy"><figcaption>IBL scene</figcaption></figure>
+        <figure class="zoom"><img src="assets/ibl-result.png" alt="Image-based lighting result in SNCINE" loading="lazy"><figcaption>IBL result</figcaption></figure>
+        <figure class="zoom"><img src="assets/gi-study-01.png" alt="Global illumination study one in SNCINE" loading="lazy"><figcaption>GI study 01</figcaption></figure>
+        <figure class="zoom"><img src="assets/gi-study-02.png" alt="Global illumination study two in SNCINE" loading="lazy"><figcaption>GI study 02</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="page-width footer-grid"><div><a class="brand" href="#top"><i></i>SNCINE</a><p>Vulkan game engine<br>and integrated editor.</p></div><div><a href="#rendering">Rendering</a><a href="#systems">Systems</a><a href="#editor">Editor</a><a href="#videos">Videos</a></div><div><span>PERSONAL ENGINE PROJECT</span><span>DEVELOPED SINCE 2020</span><span>WINDOWS · LINUX · macOS</span></div></div><div class="page-width copyright"><span>© 2026 Sencer Ozturk</span><a href="#top">Back to top ↑</a></div></footer>
+  <dialog class="viewer"><button type="button">Close ×</button><img src="" alt=""><p></p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
